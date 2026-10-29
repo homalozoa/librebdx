@@ -30,9 +30,7 @@ Run from the repository root (`python scripts/<name>.py ...`). Each script's doc
 | Script | Purpose |
 |---|---|
 | `fit_bdx_standing_net.py` | sample the standing IK and fit the reference MLP |
-| `test_bdx_standing_ref.py`, `sweep_bdx_standing_ranges.py` | check the standing reference |
 | `build_walk_refs.py` | build the walking reference table (gait tool + GPU IK) |
-| `render_walk_table.py`, `render_robot.py` | kinematic previews of references and models |
 
 ## Film
 
@@ -40,8 +38,3 @@ Run from the repository root (`python scripts/<name>.py ...`). Each script's doc
 |---|---|
 | `bdx_story.py`, `bdx_story2.py` | record the story beats as policy rollouts |
 | `export_blender.py` | turn rollouts into per-mesh world poses for Blender |
-
-## Diagnostics
-
-Kept for anyone retracing the debugging in `docs/REPORT.md` Sec. 5:
-`ablate_step.py`, `cpu_profile.py`, `kernel_profile.py`, `physics_time.py`, `profile_step.py`, `profile_gait.py`, `reward_breakdown.py`, `check_hold.py`, `check_flight.py`, `walk_probe.py`, `walk_corr.py`, `walk_video.py`, `fall_analysis.py`, `fall_hist.py`, `fall_trace.py`, `hand_walk.py`, `tune_gait.py`, `gait_ablate.py`, `gait_dino_test.py`, `gait_debug_fall.py`, `gait_trace.py`, `debug_mpc_sim.py`, `time_mpc.py`.
