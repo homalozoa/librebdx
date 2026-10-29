@@ -38,3 +38,7 @@ disneyrepro = ["**/*.xml", "**/*.stl", "**/*.npz", "**/*.pt", "**/LICENSE*"]
 [tool.ruff]
 line-length = 120
 indent-width = 2
+
+[tool.ruff.lint]
+# CI gate: syntax errors and undefined names only; style is left to the surrounding code.
+select = ["E9", "F63", "F7", "F82"]

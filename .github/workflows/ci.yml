@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    # Training and evaluation need an NVIDIA GPU; CI only checks that the code parses
+    # and that the docs' relative links resolve.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Lint (syntax errors and undefined names)
+        run: pipx run ruff check .
+      - name: Byte-compile
+        run: python -m compileall -q disneyrepro scripts
+      - name: Check relative links in Markdown
+        run: |
+          python - <<'EOF'
+          import os, re, sys
+          bad = []
+          for root, _, files in os.walk("."):
+            if root.startswith(("./.git", "./results")):
+              continue
+            for f in files:
+              if not f.endswith(".md"):
+                continue
+              md = os.path.join(root, f)
+              for m in re.finditer(r'\]\(([^)#\s]+)\)|src="([^"]+)"', open(md, encoding="utf-8").read()):
+                link = m.group(1) or m.group(2)
+                if link.startswith(("http", "mailto:", "<")):
+                  continue
+                if not os.path.exists(os.path.normpath(os.path.join(root, link))):
+                  bad.append(f"{md}: {link}")
+          print("\n".join(bad) or "all links resolve")
+          sys.exit(1 if bad else 0)
+          EOF

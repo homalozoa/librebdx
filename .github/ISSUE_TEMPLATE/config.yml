@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: The original paper (RSS 2024)
+    url: https://www.roboticsproceedings.org/rss20/p103.html
+    about: Questions about Disney's robot itself belong with the paper's authors, not this unofficial reproduction.

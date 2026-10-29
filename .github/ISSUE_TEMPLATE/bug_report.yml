@@ -1,0 +1,23 @@
+name: Bug report
+description: Something does not run, or runs differently from the docs
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command you ran and the full error or unexpected output.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: GPU, driver/CUDA, OS, and `pip show mjlab mujoco-warp rsl-rl-lib torch` versions
+    validations:
+      required: true

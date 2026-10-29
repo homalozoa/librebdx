@@ -52,7 +52,7 @@ A small droid learns to stand, walk, dance, jump and throw a tantrum in thousand
   <img src="docs/figures/fig9_transitions.png" width="49%" alt="Policy transitions">
 </p>
 
-The full write-up, with every deviation from the paper and every bug that had to be fixed, is in **[docs/REPORT.md](docs/REPORT.md)**.
+The full write-up, with every deviation from the paper and every bug that had to be fixed, is in **[docs/REPORT.md](docs/REPORT.md)**. How the project got there, stage by stage, is in [docs/HISTORY.md](docs/HISTORY.md).
 
 ## Quick start
 
@@ -127,6 +127,10 @@ docs/           REPORT.md and figures
 ## The film
 
 *BDX: A New Gait* is a ten-chapter, two-minute short in English and Chinese. A scout wakes under two suns, follows a signal across the dunes and at nightfall finds that someone answers. Each chapter is one policy doing what it was trained to do. The rendered films are attached to the release; [blender/README.md](blender/README.md) explains how to rebuild them.
+
+## Contributing
+
+Results from other GPUs, closer matches to the paper and fixes are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md). Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## Citation
 

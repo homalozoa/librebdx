@@ -52,7 +52,7 @@
   <img src="docs/figures/fig9_transitions.png" width="49%" alt="策略切换">
 </p>
 
-完整报告（与论文的所有偏差、所有修过的 bug）见 **[docs/REPORT.md](docs/REPORT.md)**（英文）。
+完整报告（与论文的所有偏差、所有修过的 bug）见 **[docs/REPORT.md](docs/REPORT.md)**（英文）；项目一步步走到这里的过程见 [docs/HISTORY.md](docs/HISTORY.md)。
 
 ## 快速开始
 
@@ -127,6 +127,10 @@ docs/           REPORT.md 与配图
 ## 短片
 
 《BDX：新的步态》共十章、约两分钟，有中英文两版。一台侦察机器人在双日下醒来，循着信号穿越沙丘，在夜幕降临时发现有人回应。每一章都是一个策略在做它被训练去做的事。成片附在 Release 中，重建方法见 [blender/README.md](blender/README.md)。
+
+## 参与贡献
+
+欢迎提交其他 GPU 上的结果、更贴近论文的改进和各种修复，见 [CONTRIBUTING.md](CONTRIBUTING.md) 与[行为准则](CODE_OF_CONDUCT.md)。版本变更见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 引用
 

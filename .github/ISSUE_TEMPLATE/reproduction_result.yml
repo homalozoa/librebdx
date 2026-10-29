@@ -1,0 +1,26 @@
+name: Reproduction result
+description: Share numbers from your own training or evaluation run
+labels: [results]
+body:
+  - type: dropdown
+    id: policy
+    attributes:
+      label: Policy
+      options: [Standing, Walking, Happy dance, Excited, Jump, Tantrum, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup
+      description: Training command, environment variables, iterations, GPU and wall-clock time.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: numbers
+    attributes:
+      label: Results
+      description: MAE (scripts/bdx_eval.py mae), velocity tracking, falls, or anything else you measured, next to the numbers in docs/REPORT.md.
+    validations:
+      required: true
