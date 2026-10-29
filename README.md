@@ -34,6 +34,9 @@ A small droid learns to stand, walk, dance, jump and throw a tantrum in thousand
 
 **Table III: joint tracking error (MAE, rad), lower is better**
 
+> [!NOTE]
+> Both columns are simulation numbers, but "Ours" is measured on a rebuilt BDX-R model and our own actuator and reference implementation, not on Disney's robot. Read it as "the same metric on a comparable setup", not as beating the paper.
+
 | Policy | Paper | Ours |
 |---|---:|---:|
 | Standing (perpetual) | 0.035 | **0.017** |
