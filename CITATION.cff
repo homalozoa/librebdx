@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: >-
+  If you use this code, please cite the original paper below. This repository
+  is an unofficial reproduction.
+title: "BDX: A New Gait — an unofficial reproduction of Design and Control of a Bipedal Robotic Character"
+type: software
+license: Apache-2.0
+authors:
+  - name: "The BDX: A New Gait contributors"
+preferred-citation:
+  type: conference-paper
+  title: "Design and Control of a Bipedal Robotic Character"
+  authors:
+    - family-names: Grandia
+      given-names: Ruben
+    - family-names: Knoop
+      given-names: Espen
+    - family-names: Hopkins
+      given-names: Michael A.
+    - family-names: Wiedebach
+      given-names: Georg
+    - family-names: Bishop
+      given-names: Jared
+    - family-names: Pickles
+      given-names: Steven
+    - family-names: Müller
+      given-names: David
+    - family-names: Bächer
+      given-names: Moritz
+  collection-title: "Robotics: Science and Systems (RSS)"
+  year: 2024
+  doi: "10.15607/RSS.2024.XX.103"
+  url: "https://www.roboticsproceedings.org/rss20/p103.html"

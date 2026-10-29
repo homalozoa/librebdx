@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+
+# Training and evaluation outputs (large; regenerate or download from the release)
+logs/
+results/
+release/
+wandb/
+outputs/
+
+# Rendered films live on the release page; the per-chapter clips stay in the repo
+site/media/film_*.mp4
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
