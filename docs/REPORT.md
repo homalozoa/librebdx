@@ -1,4 +1,4 @@
-# BDX: A New Gait — reproducing *Design and Control of a Bipedal Robotic Character*
+# librebdx — reproducing *Design and Control of a Bipedal Robotic Character*
 
 *A small droid learned to walk in thousands of simulated worlds at once. This is how it was taught, measured against the paper that taught it first.*
 
@@ -67,13 +67,13 @@ Standing still after walking or a fast turn, the torso drifts less than 1.2 mm/s
 
 ### 2.1 Robot
 
-The paper's droid is not public. We used the open-source **BDX-R** (Apache-2.0, 14 actuated DoF) as a stand-in, re-massed to the paper's distribution: torso 5.8 kg, each leg 3.6 kg, head 2.4 kg, 15.4 kg in total. Its structure was then changed to match the paper's Sec. IV: the neck is lengthened by 6.6 cm so the robot stands 0.66 m tall without antennas, and the hip yaw (±0.6 rad) and hip roll (−0.45 to 0.6 rad) ranges are widened so it can turn at the paper's 1.8 rad/s. Collision geometry uses rounded capsule soles (r = 0.02 m), fitted leg capsules and an oriented head box, with bit-masked contact pairs. Builder: [`disneyrepro/robots/bdxr/build.py`](../disneyrepro/robots/bdxr/build.py).
+The paper's droid is not public. We used the open-source **BDX-R** (Apache-2.0, 14 actuated DoF) as a stand-in, re-massed to the paper's distribution: torso 5.8 kg, each leg 3.6 kg, head 2.4 kg, 15.4 kg in total. Its structure was then changed to match the paper's Sec. IV: the neck is lengthened by 6.6 cm so the robot stands 0.66 m tall without antennas, and the hip yaw (±0.6 rad) and hip roll (−0.45 to 0.6 rad) ranges are widened so it can turn at the paper's 1.8 rad/s. Collision geometry uses rounded capsule soles (r = 0.02 m), fitted leg capsules and an oriented head box, with bit-masked contact pairs. Builder: [`librebdx/robots/bdxr/build.py`](../librebdx/robots/bdxr/build.py).
 
 ![BDX-R model](figures/bdxr_model.png)
 
 ### 2.2 Actuators and action pipeline (Sec. IV, Table VI, Eqs. 14–20)
 
-- **Actuator model** ([`disneyrepro/rl/disney_actuator.py`](../disneyrepro/rl/disney_actuator.py)), covering:
+- **Actuator model** ([`librebdx/rl/disney_actuator.py`](../librebdx/rl/disney_actuator.py)), covering:
   - encoder offset;
   - backlash;
   - Coulomb + viscous friction;
@@ -89,18 +89,18 @@ The paper's droid is not public. We used the open-source **BDX-R** (Apache-2.0, 
   | Unitree Go1 | hip yaw, ankle, neck pitch |
   | Dynamixel XH540 | head pitch, yaw, roll |
 
-- **Action pipeline** ([`disneyrepro/rl/disney_action.py`](../disneyrepro/rl/disney_action.py)): the policy runs at 50 Hz. Its setpoints go through first-order hold → 37.5 Hz low-pass → clipping to the reference-centred range, into 600 Hz physics (decimation 12), the paper's low-level rate.
+- **Action pipeline** ([`librebdx/rl/disney_action.py`](../librebdx/rl/disney_action.py)): the policy runs at 50 Hz. Its setpoints go through first-order hold → 37.5 Hz low-pass → clipping to the reference-centred range, into 600 Hz physics (decimation 12), the paper's low-level rate.
 
 ### 2.3 Reference generators
 
 - **Standing (perpetual):**
   - Batched torch IK samples the 8-D command space: head height, yaw, pitch and roll, plus torso height, yaw, pitch and roll.
-  - An MLP fitted to dense IK samples ([`disneyrepro/bdx/standing_ref.py`](../disneyrepro/bdx/standing_ref.py)) gives smooth, differentiable references.
-- **Walking (periodic):** a gait-authoring tool, reimplemented from *Stylized Gaits* ([`disneyrepro/gait/`](../disneyrepro/gait/)). It has a phase-mapped step planner, heel-toe and sample blending, and a LIPM CoM computed by convolution with (ω/2)e^{−ω|τ|}. Batched IK runs over a 11 × 7 × 7 (vx, vy, ωz) grid with 64 time-uniform phases each. The resulting table is GPU-interpolated at run time ([`disneyrepro/rl/walk_table.py`](../disneyrepro/rl/walk_table.py)).
+  - An MLP fitted to dense IK samples ([`librebdx/bdx/standing_ref.py`](../librebdx/bdx/standing_ref.py)) gives smooth, differentiable references.
+- **Walking (periodic):** a gait-authoring tool, reimplemented from *Stylized Gaits* ([`librebdx/gait/`](../librebdx/gait/)). It has a phase-mapped step planner, heel-toe and sample blending, and a LIPM CoM computed by convolution with (ω/2)e^{−ω|τ|}. Batched IK runs over a 11 × 7 × 7 (vx, vy, ωz) grid with 64 time-uniform phases each. The resulting table is GPU-interpolated at run time ([`librebdx/rl/walk_table.py`](../librebdx/rl/walk_table.py)).
 
   ![walk reference](figures/bdx_walk_ref.png)
 
-- **Episodic:** procedural animation clips for happy dance, excited and tantrum, and a ballistic jump. The jump crouches 5 cm, pushes for 0.15 s to a 1.07 m/s take-off and flies for 0.22 s (5.8 cm rise); the feet tuck 3 cm and the head pitches up in flight ([`disneyrepro/bdx/episodic.py`](../disneyrepro/bdx/episodic.py)).
+- **Episodic:** procedural animation clips for happy dance, excited and tantrum, and a ballistic jump. The jump crouches 5 cm, pushes for 0.15 s to a 1.07 m/s take-off and flies for 0.22 s (5.8 cm rise); the feet tuck 3 cm and the head pitches up in flight ([`librebdx/bdx/episodic.py`](../librebdx/bdx/episodic.py)).
 
 ### 2.4 RL formulation (Sec. V)
 
@@ -115,7 +115,7 @@ The paper's droid is not public. We used the open-source **BDX-R** (Apache-2.0, 
 
 ### 2.5 Runtime (Sec. VI)
 
-[`disneyrepro/bdx/runtime.py`](../disneyrepro/bdx/runtime.py):
+[`librebdx/bdx/runtime.py`](../librebdx/bdx/runtime.py):
 - **Policy slots with full state transfer:** a switch carries over the root, joints, actuator/filter internals and action history, converted through setpoint space, plus the path frame. That makes stand ↔ walk ↔ episodic transitions seamless.
 - **Three-layer animation engine:** a looping background, triggered clips blended in and out (T_β = 0.1 s, T_α = 0.35 s), and joystick gaze/posture control (Eqs. 9–12).
 

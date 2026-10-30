@@ -6,7 +6,7 @@ trajectories with the same whole-body IK used for the other references.
 Each clip starts and ends in the nominal standing pose. Stored at 50 Hz in
 coordinates relative to the start path frame.
 
-Run: python -m disneyrepro.bdx.episodic
+Run: python -m librebdx.bdx.episodic
 """
 
 from __future__ import annotations
@@ -17,9 +17,9 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from disneyrepro.bdx.standing_ref import LEG_L, LEG_R, XML, NECK_PER_M, Nominal
-from disneyrepro.kin.leg_ik import LegIK
-from disneyrepro.kin.torch_kin import euler_zyx_to_mat, mat_to_quat
+from librebdx.bdx.standing_ref import LEG_L, LEG_R, XML, NECK_PER_M, Nominal
+from librebdx.kin.leg_ik import LegIK
+from librebdx.kin.torch_kin import euler_zyx_to_mat, mat_to_quat
 
 DATA = Path(__file__).parent / "data"
 FPS = 50

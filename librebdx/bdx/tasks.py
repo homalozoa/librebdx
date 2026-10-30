@@ -9,12 +9,12 @@ from pathlib import Path
 
 import torch
 
-from disneyrepro.bdx import robot_cfg as rc
-from disneyrepro.bdx.standing_ref import CMD_HI, CMD_LO, Nominal
-from disneyrepro.common.fitnet import FitNet
-from disneyrepro.kin.torch_kin import euler_zyx_to_mat
-from disneyrepro.rl import char_common as cc
-from disneyrepro.rl.char_env import CharSpec, make_char_env_cfg, make_ppo_cfg
+from librebdx.bdx import robot_cfg as rc
+from librebdx.bdx.standing_ref import CMD_HI, CMD_LO, Nominal
+from librebdx.common.fitnet import FitNet
+from librebdx.kin.torch_kin import euler_zyx_to_mat
+from librebdx.rl import char_common as cc
+from librebdx.rl.char_env import CharSpec, make_char_env_cfg, make_ppo_cfg
 
 DATA = Path(__file__).parent / "data"
 
@@ -181,7 +181,7 @@ class WalkingRef(cc.CharacterRef):
 
   def __init__(self, cfg, env):
     super().__init__(cfg, env)
-    from disneyrepro.rl.walk_table import WalkTable
+    from librebdx.rl.walk_table import WalkTable
 
     dev = self.device
     self.table = WalkTable(cfg.table_path, dev)
@@ -191,7 +191,7 @@ class WalkingRef(cc.CharacterRef):
     self.g = torch.zeros(self.num_envs, 7, device=dev)
     self.g_target = torch.zeros_like(self.g)
     self.phi = torch.zeros(self.num_envs, device=dev)
-    from disneyrepro.bdx.standing_ref import NECK_PER_M
+    from librebdx.bdx.standing_ref import NECK_PER_M
 
     self.neck_per_m = NECK_PER_M
 
@@ -203,7 +203,7 @@ class WalkingRef(cc.CharacterRef):
     super()._update_command(env_ids)
     if self.cfg.variant in ("vel_only", "phase_contact"):
       # Torso rewards track the commands directly (Hwangbo et al. style).
-      from disneyrepro.rl.char_common import yaw_mat
+      from librebdx.rl.char_common import yaw_mat
 
       v = self.g[:, 4:]
       c, s = torch.cos(self.pf_yaw), torch.sin(self.pf_yaw)
@@ -215,8 +215,8 @@ class WalkingRef(cc.CharacterRef):
   def _init_velocities(self, env_ids, dt=0.02):
     from mjlab.utils.lab_api.math import matrix_from_quat
 
-    from disneyrepro.kin.torch_kin import so3_log
-    from disneyrepro.rl.char_common import yaw_mat
+    from librebdx.kin.torch_kin import so3_log
+    from librebdx.rl.char_common import yaw_mat
 
     v = self.g[env_ids, 4:]
     phi = self.phi[env_ids]
@@ -445,8 +445,8 @@ class EpisodicRef(cc.CharacterRef):
   def _init_velocities(self, env_ids, dt=0.02):
     from mjlab.utils.lab_api.math import matrix_from_quat
 
-    from disneyrepro.kin.torch_kin import so3_log
-    from disneyrepro.rl.char_common import yaw_mat
+    from librebdx.kin.torch_kin import so3_log
+    from librebdx.rl.char_common import yaw_mat
 
     f = torch.clamp(self.t[env_ids] * self.fps, 0, self.n - 2)
     i0 = torch.floor(f).long()

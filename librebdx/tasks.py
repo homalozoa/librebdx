@@ -35,11 +35,11 @@ def register_all():
   if _done:
     return
   _patch_only_positive_rewards()
-  from disneyrepro.bdx import tasks as bdx_tasks
+  from librebdx.bdx import tasks as bdx_tasks
 
   bdx_tasks.register()
   try:
-    from disneyrepro.olaf import tasks as olaf_tasks
+    from librebdx.olaf import tasks as olaf_tasks
 
     olaf_tasks.register()
   except ImportError:

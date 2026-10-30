@@ -20,8 +20,8 @@ from mjlab.terrains import TerrainEntityCfg
 from mjlab.utils.noise import UniformNoiseCfg as Unoise
 from mjlab.viewer import ViewerConfig
 
-from disneyrepro.rl import char_common as cc
-from disneyrepro.rl.disney_action import DisneyJointActionCfg
+from librebdx.rl import char_common as cc
+from librebdx.rl.disney_action import DisneyJointActionCfg
 
 # Reward weights of Table I (Grandia et al.).
 BDX_WEIGHTS = dict(

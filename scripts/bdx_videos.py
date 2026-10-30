@@ -10,7 +10,7 @@ import mediapy
 import numpy as np
 import torch
 
-from disneyrepro.bdx.record import PoseRecorder
+from librebdx.bdx.record import PoseRecorder
 
 sys.path.insert(0, str(Path(__file__).parent))
 from eval_policy import load_policy  # noqa: E402
@@ -92,5 +92,5 @@ for task, ck, name in (("happy_dance", happy, "episodic_happy_dance"), ("excited
     continue
   import numpy as _np
 
-  T = (_np.load(f"disneyrepro/bdx/data/episodic_{task}.npz")["q"].shape[0] - 1) / 50.0
+  T = (_np.load(f"librebdx/bdx/data/episodic_{task}.npz")["q"].shape[0] - 1) / 50.0
   run(f"Disney-BDX-Episodic-{task}", ck, T + 0.3, None, name)

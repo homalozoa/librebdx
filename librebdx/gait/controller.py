@@ -12,10 +12,10 @@ import mujoco
 import numpy as np
 import proxsuite
 
-from disneyrepro.gait.mpc import ComMPC
-from disneyrepro.gait.params import GaitStyle
-from disneyrepro.gait.planner import FootGeom, GaitPlanner, PHI_LTD, PHI_RLO, PHI_RTD, rotz
-from disneyrepro.gait.wbc import WbcGains, WbcRef, WholeBodyController, so3_log
+from librebdx.gait.mpc import ComMPC
+from librebdx.gait.params import GaitStyle
+from librebdx.gait.planner import FootGeom, GaitPlanner, PHI_LTD, PHI_RLO, PHI_RTD, rotz
+from librebdx.gait.wbc import WbcGains, WbcRef, WholeBodyController, so3_log
 
 
 @dataclass

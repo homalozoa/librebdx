@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
-from disneyrepro.gait.curves import Curve, PhaseMap, f_soft
+from librebdx.gait.curves import Curve, PhaseMap, f_soft
 
 FOOT_KEYS = ("x", "y", "z", "yaw", "heel", "toe", "roll")
 CY_KEYS = ("pelvis_z", "pelvis_yaw", "pelvis_pitch", "pelvis_roll")

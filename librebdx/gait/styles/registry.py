@@ -3,7 +3,7 @@
 
 def get(name):
   if name in ("dino_gait", "injured_gait"):
-    from disneyrepro.gait.styles import dino
+    from librebdx.gait.styles import dino
 
     return getattr(dino, name)()
   raise KeyError(name)

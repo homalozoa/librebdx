@@ -2,14 +2,14 @@
 
 from pathlib import Path
 
-from disneyrepro.gait.planner import FootGeom
-from disneyrepro.gait.sim import RobotGaitSetup
+from librebdx.gait.planner import FootGeom
+from librebdx.gait.sim import RobotGaitSetup
 
 ROBOTS = Path(__file__).parents[1] / "robots"
 
 
 def dino():
-  from disneyrepro.robots.dino.build import FOOT
+  from librebdx.robots.dino.build import FOOT
 
   hx, hy, _ = FOOT["half"]
   return RobotGaitSetup(

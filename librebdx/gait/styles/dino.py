@@ -11,7 +11,7 @@ the dino gait so the character blends back to a symmetric gait at speed.
 
 import math
 
-from disneyrepro.gait.authoring import periodic, sample, style_from
+from librebdx.gait.authoring import periodic, sample, style_from
 
 UPPER = ("neck_pitch1", "neck_yaw", "neck_pitch2", "head_pitch", "tail_yaw1", "tail_pitch2", "tail_yaw3", "tail_pitch4")
 WIDTH = 0.17

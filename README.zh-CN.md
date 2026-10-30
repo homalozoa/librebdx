@@ -1,6 +1,6 @@
 <div align="center">
 
-# BDX：新的步态
+# librebdx
 
 **按论文从零复现迪士尼研究院的双足角色机器人控制器（非官方）**
 
@@ -62,7 +62,7 @@
 需要 Linux、NVIDIA GPU（MuJoCo Warp 运行在 CUDA 上）和 Python 3.10。
 
 ```bash
-git clone <this-repo> bdx-new-gait && cd bdx-new-gait
+git clone git@github.com:homalozoa/librebdx.git && cd librebdx
 uv venv --python 3.10 && source .venv/bin/activate
 uv pip install -e .
 ```
@@ -115,7 +115,7 @@ python scripts/train.py Disney-BDX-Walking                  $COMMON --agent.algo
 ## 目录结构
 
 ```
-disneyrepro/
+librebdx/
   bdx/          机器人配置、任务、站立 IK 参考、情景片段、运行时
   rl/           执行器模型、动作管线、共用奖励与观测
   gait/         步态编辑工具（落脚规划、LIPM、全身 IK）
@@ -152,6 +152,6 @@ docs/           REPORT.md 与配图
 
 ## 许可证
 
-代码采用 [Apache License 2.0](LICENSE)。BDX-R 网格为 MIT 许可，原始 BDX-R MJCF 为 Apache-2.0，两份许可证都保留在 [`disneyrepro/robots/bdxr/`](disneyrepro/robots/bdxr/)。署名见 [NOTICE](NOTICE)。
+代码采用 [Apache License 2.0](LICENSE)。BDX-R 网格为 MIT 许可，原始 BDX-R MJCF 为 Apache-2.0，两份许可证都保留在 [`librebdx/robots/bdxr/`](librebdx/robots/bdxr/)。署名见 [NOTICE](NOTICE)。
 
 基于 [mjlab](https://github.com/mujocolab/mjlab)、[MuJoCo Warp](https://github.com/google-deepmind/mujoco_warp)、[rsl_rl](https://github.com/leggedrobotics/rsl_rl) 和 [Blender](https://www.blender.org) 构建。

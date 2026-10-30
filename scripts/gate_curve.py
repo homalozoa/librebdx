@@ -20,7 +20,7 @@ import numpy as np
 import torch
 
 sys.path.insert(0, str(Path(__file__).parent))
-from disneyrepro.tasks import register_all  # noqa: E402
+from librebdx.tasks import register_all  # noqa: E402
 
 register_all()
 from mjlab.envs import ManagerBasedRlEnv  # noqa: E402

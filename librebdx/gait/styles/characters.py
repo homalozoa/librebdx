@@ -10,7 +10,7 @@ heel-strike at touch-down), small snowball feet, slow pace.
 
 import math
 
-from disneyrepro.gait.authoring import free, periodic, sample, style_from, swing
+from librebdx.gait.authoring import free, periodic, sample, style_from, swing
 
 TAU = 2 * math.pi
 

@@ -18,8 +18,8 @@ from pathlib import Path
 
 import torch
 
-from disneyrepro.kin.ik import BatchedLSQ
-from disneyrepro.kin.torch_kin import TorchKinematics, euler_zyx_to_mat, so3_log
+from librebdx.kin.ik import BatchedLSQ
+from librebdx.kin.torch_kin import TorchKinematics, euler_zyx_to_mat, so3_log
 
 XML = Path(__file__).parents[1] / "robots" / "bdxr" / "bdxr.xml"
 

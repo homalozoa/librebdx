@@ -5,7 +5,7 @@ bird-like neck, a 4-DoF segmented tail with alternating yaw and pitch joints;
 615 mm tall, 16.9 kg (Table 4). No CAD is public, so the geometry below is our
 own design matching those numbers. At q = 0 the robot is in its nominal stance.
 
-Run: python -m disneyrepro.robots.dino.build
+Run: python -m librebdx.robots.dino.build
 """
 
 from pathlib import Path
@@ -13,7 +13,7 @@ from pathlib import Path
 import mujoco
 import numpy as np
 
-from disneyrepro.robots import builder as B
+from librebdx.robots import builder as B
 
 OUT = Path(__file__).parent / "dino.xml"
 

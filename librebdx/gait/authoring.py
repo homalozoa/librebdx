@@ -6,8 +6,8 @@ import math
 
 import numpy as np
 
-from disneyrepro.gait.curves import Curve
-from disneyrepro.gait.params import GaitSample, GaitStyle, SAMPLE_NAMES
+from librebdx.gait.curves import Curve
+from librebdx.gait.params import GaitSample, GaitStyle, SAMPLE_NAMES
 
 
 def periodic(fn, n=16):

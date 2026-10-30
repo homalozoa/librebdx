@@ -14,11 +14,11 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from disneyrepro.tasks import register_all
+from librebdx.tasks import register_all
 
 register_all()
-from disneyrepro.bdx.record import PoseRecorder  # noqa: E402
-from disneyrepro.bdx.runtime import PolicySlot  # noqa: E402
+from librebdx.bdx.record import PoseRecorder  # noqa: E402
+from librebdx.bdx.runtime import PolicySlot  # noqa: E402
 
 TRAJ = Path("results/bdx/traj")
 TRAJ.mkdir(parents=True, exist_ok=True)

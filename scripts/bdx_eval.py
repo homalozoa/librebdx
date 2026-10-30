@@ -43,7 +43,7 @@ def mae(task, ckpt, seconds=60.0, envs=256):
 
 
 def veltrack(ckpt):
-  from disneyrepro.bdx.tasks import WALK_HI, WALK_LO
+  from librebdx.bdx.tasks import WALK_HI, WALK_LO
   import matplotlib
 
   matplotlib.use("Agg")
@@ -100,7 +100,7 @@ def jump(ckpt):
   matplotlib.use("Agg")
   import matplotlib.pyplot as plt
 
-  from disneyrepro.rl.disney_actuator import DisneyActuator
+  from librebdx.rl.disney_actuator import DisneyActuator
 
   env, wenv, policy = load_policy("Disney-BDX-Episodic-jump", ckpt, 1)
   r = env.scene["robot"]

@@ -12,7 +12,7 @@ from pathlib import Path
 import mujoco
 import numpy as np
 
-from disneyrepro.bdx.robot_cfg import get_spec
+from librebdx.bdx.robot_cfg import get_spec
 
 OUT = Path("results/bdx/blender")
 OUT.mkdir(parents=True, exist_ok=True)

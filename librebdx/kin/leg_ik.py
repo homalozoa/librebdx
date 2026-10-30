@@ -10,8 +10,8 @@ from __future__ import annotations
 
 import torch
 
-from disneyrepro.kin.ik import BatchedLSQ
-from disneyrepro.kin.torch_kin import TorchKinematics
+from librebdx.kin.ik import BatchedLSQ
+from librebdx.kin.torch_kin import TorchKinematics
 
 
 class LegIK:

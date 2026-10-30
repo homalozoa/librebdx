@@ -10,17 +10,17 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from disneyrepro.gait.planner import FootGeom
-from disneyrepro.gait.refgen import CycleSpec, build_table
-from disneyrepro.gait.styles import characters as C
-from disneyrepro.kin.leg_ik import LegIK
-from disneyrepro.kin.torch_kin import mat_to_quat
+from librebdx.gait.planner import FootGeom
+from librebdx.gait.refgen import CycleSpec, build_table
+from librebdx.gait.styles import characters as C
+from librebdx.kin.leg_ik import LegIK
+from librebdx.kin.torch_kin import mat_to_quat
 
-ROOT = Path(__file__).parents[1] / "disneyrepro"
+ROOT = Path(__file__).parents[1] / "librebdx"
 name = sys.argv[1]
 
 if name in ("bdx", "bdx_calm"):
-  from disneyrepro.bdx.standing_ref import XML, LEG_L, LEG_R
+  from librebdx.bdx.standing_ref import XML, LEG_L, LEG_R
 
   style_fn = C.bdx_walk_calm if name == "bdx_calm" else C.bdx_walk
   foot = FootGeom(heel_x=-0.0675, toe_x=0.0675, half_width=0.008, line_contact=True)

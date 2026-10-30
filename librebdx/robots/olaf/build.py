@@ -9,7 +9,7 @@ shoulders, jaw, eyebrow, eyes) have low inertia and are not part of the RL
 backbone; they are modelled as fixed masses here. Dimensions/masses not given
 in the paper are our own estimates.
 
-Run: python -m disneyrepro.robots.olaf.build
+Run: python -m librebdx.robots.olaf.build
 """
 
 from pathlib import Path
@@ -17,7 +17,7 @@ from pathlib import Path
 import mujoco
 import numpy as np
 
-from disneyrepro.robots import builder as B
+from librebdx.robots import builder as B
 
 OUT = Path(__file__).parent / "olaf.xml"
 

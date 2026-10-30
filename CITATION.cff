@@ -2,11 +2,12 @@ cff-version: 1.2.0
 message: >-
   If you use this code, please cite the original paper below. This repository
   is an unofficial reproduction.
-title: "BDX: A New Gait — an unofficial reproduction of Design and Control of a Bipedal Robotic Character"
+title: "librebdx — an unofficial reproduction of Design and Control of a Bipedal Robotic Character"
+repository-code: "https://github.com/homalozoa/librebdx"
 type: software
 license: Apache-2.0
 authors:
-  - name: "The BDX: A New Gait contributors"
+  - name: "The librebdx contributors"
 preferred-citation:
   type: conference-paper
   title: "Design and Control of a Bipedal Robotic Character"

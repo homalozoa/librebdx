@@ -18,7 +18,7 @@ jobs:
       - name: Lint (syntax errors and undefined names)
         run: pipx run ruff check .
       - name: Byte-compile
-        run: python -m compileall -q disneyrepro scripts
+        run: python -m compileall -q librebdx scripts
       - name: Check relative links in Markdown
         run: |
           python - <<'EOF'

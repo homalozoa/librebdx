@@ -15,7 +15,7 @@ import torch
 sys.path.insert(0, str(Path(__file__).parent))
 from eval_policy import load_policy  # noqa: E402
 
-from disneyrepro.bdx.record import PoseRecorder  # noqa: E402
+from librebdx.bdx.record import PoseRecorder  # noqa: E402
 
 TRAJ = Path("results/bdx/traj")
 TRAJ.mkdir(parents=True, exist_ok=True)

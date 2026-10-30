@@ -17,8 +17,8 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from disneyrepro.gait.mpc import ComMPC
-from disneyrepro.gait.planner import FootGeom, GaitPlanner
+from librebdx.gait.mpc import ComMPC
+from librebdx.gait.planner import FootGeom, GaitPlanner
 
 
 @dataclass

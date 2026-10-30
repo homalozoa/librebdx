@@ -1,6 +1,6 @@
 <div align="center">
 
-# BDX: A New Gait
+# librebdx
 
 **An unofficial, from-the-paper reproduction of Disney Research's bipedal character controller**
 
@@ -62,7 +62,7 @@ The full write-up, with every deviation from the paper and every bug that had to
 You need Linux with an NVIDIA GPU (MuJoCo Warp runs on CUDA) and Python 3.10.
 
 ```bash
-git clone <this-repo> bdx-new-gait && cd bdx-new-gait
+git clone git@github.com:homalozoa/librebdx.git && cd librebdx
 uv venv --python 3.10 && source .venv/bin/activate
 uv pip install -e .
 ```
@@ -115,7 +115,7 @@ One run takes about 40 hours on an idle RTX 4090. Resume an interrupted run with
 ## Repository layout
 
 ```
-disneyrepro/
+librebdx/
   bdx/          robot config, tasks, standing IK reference, episodic clips, runtime
   rl/           actuator model, action pipeline, shared rewards and observations
   gait/         gait-authoring tool (step planner, LIPM, whole-body IK)
@@ -152,6 +152,6 @@ If this code helps your work, please cite the original paper:
 
 ## License
 
-Code is released under the [Apache License 2.0](LICENSE). The BDX-R meshes are MIT-licensed and the original BDX-R MJCF is Apache-2.0; both licenses are kept in [`disneyrepro/robots/bdxr/`](disneyrepro/robots/bdxr/). See [NOTICE](NOTICE) for attributions.
+Code is released under the [Apache License 2.0](LICENSE). The BDX-R meshes are MIT-licensed and the original BDX-R MJCF is Apache-2.0; both licenses are kept in [`librebdx/robots/bdxr/`](librebdx/robots/bdxr/). See [NOTICE](NOTICE) for attributions.
 
 Built on [mjlab](https://github.com/mujocolab/mjlab), [MuJoCo Warp](https://github.com/google-deepmind/mujoco_warp), [rsl_rl](https://github.com/leggedrobotics/rsl_rl) and [Blender](https://www.blender.org).

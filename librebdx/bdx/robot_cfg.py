@@ -11,8 +11,8 @@ import mujoco
 
 from mjlab.entity import EntityArticulationInfoCfg, EntityCfg
 
-from disneyrepro.bdx.standing_ref import XML, Nominal
-from disneyrepro.rl.disney_actuator import DYNAMIXEL_XH540, UNITREE_A1, UNITREE_GO1, make_cfg
+from librebdx.bdx.standing_ref import XML, Nominal
+from librebdx.rl.disney_actuator import DYNAMIXEL_XH540, UNITREE_A1, UNITREE_GO1, make_cfg
 
 # The paper's actuators run at 600 Hz with a 50 Hz policy (Sec. VI-D): 12 physics
 # steps per policy step, with first-order hold and the 37.5 Hz low-pass in between.
@@ -61,7 +61,7 @@ def get_spec() -> mujoco.MjSpec:
 
 def nominal_joint_pos() -> dict[str, float]:
   """Nominal standing pose (from the standing IK at zero command)."""
-  from disneyrepro.bdx.standing_ref import BdxStandingReference
+  from librebdx.bdx.standing_ref import BdxStandingReference
 
   ref = BdxStandingReference(device="cpu")
   q = ref.x_nominal[2:].tolist()

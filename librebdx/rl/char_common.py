@@ -22,7 +22,7 @@ from mjlab.utils.lab_api.math import (
   quat_from_matrix,
 )
 
-from disneyrepro.kin.torch_kin import axis_angle_to_mat, so3_log
+from librebdx.kin.torch_kin import axis_angle_to_mat, so3_log
 
 
 def yaw_mat(yaw):
@@ -244,7 +244,7 @@ def obs_root_ang_vel_b(env, entity_name="robot"):
 
 def obs_measured_joint_pos(env, entity_name="robot"):
   """Joint encoder readings with offset, backlash and noise (Eq. 19), minus the default pose."""
-  from disneyrepro.rl.disney_actuator import DisneyActuator
+  from librebdx.rl.disney_actuator import DisneyActuator
 
   r = env.scene[entity_name]
   q, qd = r.data.joint_pos, r.data.joint_vel

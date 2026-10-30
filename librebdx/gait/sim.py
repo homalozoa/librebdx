@@ -8,9 +8,9 @@ from dataclasses import dataclass, field
 import mujoco
 import numpy as np
 
-from disneyrepro.common.render import Renderer, add_floor, make_camera
-from disneyrepro.gait.controller import ControllerConfig, GaitController
-from disneyrepro.gait.planner import FootGeom
+from librebdx.common.render import Renderer, add_floor, make_camera
+from librebdx.gait.controller import ControllerConfig, GaitController
+from librebdx.gait.planner import FootGeom
 
 
 @dataclass
@@ -108,7 +108,7 @@ def run(setup: RobotGaitSetup, style, duration, v_fn, push=None, video=None, cfg
   if rend is not None:
     rend.close()
   if video and frames:
-    from disneyrepro.common.render import save_video
+    from librebdx.common.render import save_video
 
     save_video(frames, video, fps=30)
   return {"log": log, "fell": fell, "t_end": t, "events": list(ctl.planner.events), "model": m}

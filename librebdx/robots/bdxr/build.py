@@ -16,7 +16,7 @@ Changes so that it matches the robot described in Grandia et al. (RSS 2024):
     +-0.26 rad hip yaw caps turning near 1 rad/s, while the paper's robot turns at
     1.8 rad/s with a "large workspace of the two legs" (Sec. IV, VII-A).
 
-Run: python -m disneyrepro.robots.bdxr.build
+Run: python -m librebdx.robots.bdxr.build
 """
 
 from pathlib import Path

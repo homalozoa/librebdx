@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
-from disneyrepro.gait.params import GaitStyle
+from librebdx.gait.params import GaitStyle
 
 PHI_LTD, PHI_RLO, PHI_RTD = 0.1, 0.5, 0.6
 

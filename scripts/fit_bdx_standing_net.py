@@ -5,10 +5,10 @@ from pathlib import Path
 
 import torch
 
-from disneyrepro.bdx.standing_ref import BdxStandingReference
-from disneyrepro.common.fitnet import FitNet, fit
+from librebdx.bdx.standing_ref import BdxStandingReference
+from librebdx.common.fitnet import FitNet, fit
 
-OUT = Path("disneyrepro/bdx/data")
+OUT = Path("librebdx/bdx/data")
 OUT.mkdir(parents=True, exist_ok=True)
 dev = "cuda"
 ref = BdxStandingReference(device=dev)

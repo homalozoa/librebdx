@@ -17,8 +17,8 @@ import torch
 sys.path.insert(0, str(Path(__file__).parent))
 from eval_policy import load_policy  # noqa: E402
 
-from disneyrepro.bdx.record import PoseRecorder  # noqa: E402
-from disneyrepro.bdx.runtime import AnimationEngine, no_clip, nod_clip  # noqa: E402
+from librebdx.bdx.record import PoseRecorder  # noqa: E402
+from librebdx.bdx.runtime import AnimationEngine, no_clip, nod_clip  # noqa: E402
 
 OUT = Path("results/bdx")
 env, wenv, policy = load_policy("Disney-BDX-Standing", sys.argv[1], 1, render=True, cfg_hook=lambda c: setattr(c, "episode_length_s", 1e9))

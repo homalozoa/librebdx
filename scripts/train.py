@@ -5,7 +5,7 @@ Usage: python scripts/train.py Disney-BDX-Standing --env.scene.num-envs 8192 ...
 
 import sys
 
-from disneyrepro.tasks import register_all
+from librebdx.tasks import register_all
 
 register_all()
 

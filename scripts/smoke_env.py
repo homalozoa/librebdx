@@ -5,7 +5,7 @@ import time
 
 import torch
 
-from disneyrepro.tasks import register_all
+from librebdx.tasks import register_all
 
 register_all()
 from mjlab.envs import ManagerBasedRlEnv  # noqa: E402
