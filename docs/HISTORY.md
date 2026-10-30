@@ -174,4 +174,4 @@ This was the longest debugging stretch. In order:
 | **P2walk** | Final walker (Table I weights, entropy 0.005, calm gait); used in the final film |
 | **P2walkH** | Second walking recipe (Olaf weights plus survival curriculum), kept as a hedge |
 | **P2jump** | Final jump (sharpened Eq. 13 emphasis, entropy 0.005); resumed once at about 65k |
-| **P2tantrum** | Tantrum retrained on the new geometry; still training at release |
+| **P2tantrum** | Tantrum retrained on the new geometry; finished Oct 30 (MAE 0.033 rad, 0 falls), released in v1.1.0 |

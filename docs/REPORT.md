@@ -32,7 +32,7 @@ These are the final, paper-length runs: 100,000 PPO iterations per policy at 8,1
 | Excited (episodic) | 0.029 | **0.028** | procedural clip |
 | Happy dance (episodic) | 0.027 | **0.025** | procedural clip |
 | Jump (episodic) | 0.043 | **0.022** | ballistic clip, airborne 0.19 s |
-| Tantrum (episodic) | 0.032 | *training* | retrained on the new geometry; this row will be filled when it finishes |
+| Tantrum (episodic) | 0.032 | 0.033 | procedural clip; retrained on the new geometry |
 
 **Velocity tracking** (Fig. 7 analogue; steady-state mean over the last half of each 2–3 s segment, measured in the path frame):
 
@@ -265,7 +265,7 @@ The film's crossing starts at 0.15 m/s and settles at 0.4 m/s. In the reunion, t
 3. stands for 1 s;
 4. switches to the excited policy.
 
-Every story beat was recorded with the final policies and ran with zero falls. Chapter VII (tantrum) will be re-recorded when its policy finishes training.
+Every story beat, Chapter VII's tantrum included, was recorded with the final policies and ran with zero falls.
 
 ---
 
@@ -281,6 +281,6 @@ All final runs: 100,000 iterations, 8,192 envs, 600 Hz. The weights are attached
 | Happy dance | `Disney-BDX-Episodic-happy_dance` | `bdx_happy_dance.pt` | P1happy |
 | Excited | `Disney-BDX-Episodic-excited` | `bdx_excited.pt` | P1exc |
 | Jump | `Disney-BDX-Episodic-jump` | `bdx_jump.pt` | P2jump (resumed once at 65k) |
-| Tantrum | `Disney-BDX-Episodic-tantrum` | `bdx_tantrum.pt` | P2tantrum (training) |
+| Tantrum | `Disney-BDX-Episodic-tantrum` | `bdx_tantrum.pt` | P2tantrum |
 
 The ablation policies (Sec. 3, 5,000 iterations each) and the earlier short runs on the original BDX-R geometry (W15, W16calm, E1, E8air) are not released.

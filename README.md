@@ -44,7 +44,7 @@ A small droid learns to stand, walk, dance, jump and throw a tantrum in thousand
 | Excited (episodic) | 0.029 | **0.028** |
 | Happy dance (episodic) | 0.027 | **0.025** |
 | Jump (episodic) | 0.043 | **0.022** |
-| Tantrum (episodic) | 0.032 | *training* |
+| Tantrum (episodic) | 0.032 | 0.033 |
 
 **Velocity tracking:** 0.7 m/s commanded → 0.696 m/s measured; ±1.8 rad/s turns (the paper's maximum) → +1.749 / −1.754 rad/s.
 **Jump:** every world leaves the ground, 0.19 s of flight, 8 cm foot clearance.

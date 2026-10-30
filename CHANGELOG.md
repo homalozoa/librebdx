@@ -4,7 +4,8 @@ How the project got here, stage by stage, is in [docs/HISTORY.md](docs/HISTORY.m
 
 ## [Unreleased]
 
-- Tantrum policy: 100,000-iteration run on the final geometry (in training). Its Table III row, its checkpoint and the re-rendered Chapter VII ("The Long Night") will follow.
+- Tantrum policy: 100,000 iterations on the final geometry; Table III MAE 0.033 rad (paper 0.032), 0 falls. Checkpoint `bdx_tantrum.pt` added to the release.
+- Chapter VII ("The Long Night") re-recorded with the new policy and re-rendered; both film cuts rebuilt.
 
 ## [1.0.0] — 2026-10-29
 
