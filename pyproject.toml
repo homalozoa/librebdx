@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bdx-new-gait"
-version = "1.0.0"
+version = "1.1.0"
 description = "Unofficial reproduction of 'Design and Control of a Bipedal Robotic Character' (Grandia et al., RSS 2024) in mjlab / MuJoCo Warp"
 readme = "README.md"
 license = { text = "Apache-2.0" }
